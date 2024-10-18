@@ -1,0 +1,16 @@
+﻿version: '3.5'
+
+networks:
+  localdev:
+    name: localdev
+    
+services:
+  main-api:
+    build:
+      context: .
+      dockerfile: Fintacharts/Dockerfile
+    restart: always
+    ports:
+      - "7001:80"
+    networks:
+      - localdev
